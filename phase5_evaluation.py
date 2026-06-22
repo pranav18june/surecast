@@ -245,4 +245,5 @@ def main():
     logging.info("\nPhase 5 Complete. Evaluation metrics saved to data/evaluation_metrics.csv.")
 
 if __name__ == "__main__":
+    set_seed(42)
     main()

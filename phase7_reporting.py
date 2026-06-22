@@ -43,6 +43,7 @@ def faithfulness_check(report_text, metrics):
     return True
 
 def main():
+    set_seed(42)
     parser = argparse.ArgumentParser()
     args = parser.parse_args()
 
@@ -98,4 +99,5 @@ def main():
         sys.exit(1)
 
 if __name__ == "__main__":
+    set_seed(42)
     main()

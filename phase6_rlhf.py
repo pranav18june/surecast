@@ -33,6 +33,7 @@ def check_anomalies(pref_val, rej_val):
     return False
 
 def main():
+    set_seed(42)
     parser = argparse.ArgumentParser()
     args = parser.parse_args()
 
@@ -77,4 +78,5 @@ def main():
     logging.info("\nPhase 6 Complete. Model aligned with human preferences.")
 
 if __name__ == "__main__":
+    set_seed(42)
     main()

@@ -191,6 +191,7 @@ def main(data_path, output_path, output_report_path):
 
 
 if __name__ == "__main__":
+    set_seed(42)
     parser = argparse.ArgumentParser(description="SUREcast Phase 1: Data Profiling")
     parser.add_argument("--data_path", type=str, default="data/DataCoSupplyChainDataset.csv", help="Path to raw dataset CSV")
     parser.add_argument("--output_path", type=str, default="data/cleaned_dataset.csv", help="Path to save cleaned CSV")

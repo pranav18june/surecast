@@ -227,13 +227,13 @@ def train_ml_ensemble(X_train_tab, y_train, X_val_tab, y_val):
         'BayesianRidge': BayesianRidge()
     }
     
-    # Disable XGBoost completely as it's causing silent segfaults on macOS with libomp
-    HAS_XGBOOST = False
+    # Enable XGBoost (Colab environment handles it fine)
+    HAS_XGBOOST = True
     
     if HAS_XGBOOST:
         models['XGBoost'] = XGBRegressor(n_estimators=50, random_state=42, objective='reg:squarederror')
     else:
-        logging.warning("XGBoost disabled to prevent macOS silent segfault. Skipping XGBoost in ML ensemble.")
+        logging.warning("XGBoost disabled. Skipping XGBoost in ML ensemble.")
         
     preds = {}
     maes = {}
@@ -343,7 +343,7 @@ def main():
     X_ml_train, X_ml_val = X_tab_all[:split_idx], X_tab_all[split_idx:]
     
     # Load Target Scaler for DL branch
-    scaler_path = "data/target_scaler.pkl"
+    scaler_path = "models/target_scaler.pkl"
     if not os.path.exists(scaler_path):
         logging.error(f"[ERROR] Required target scaler '{scaler_path}' not found. Run Phase 3 first.")
         sys.exit(1)
@@ -450,4 +450,5 @@ def main():
     logging.info("Phase 4 Complete.")
 
 if __name__ == "__main__":
+    set_seed(42)
     main()

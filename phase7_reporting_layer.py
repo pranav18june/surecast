@@ -132,4 +132,5 @@ def main():
     # The reporting logic would read from the JSON and generate the template here.
 
 if __name__ == "__main__":
+    set_seed(42)
     main()

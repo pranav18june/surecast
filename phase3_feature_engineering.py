@@ -264,7 +264,7 @@ def main():
     train_target = train_df[args.target_col].values.reshape(-1, 1)
     target_scaler.fit(train_target)
     
-    scaler_path = "data/target_scaler.pkl"
+    scaler_path = "models/target_scaler.pkl"
     joblib.dump(target_scaler, scaler_path)
     logging.info(f" - Target scaler saved to {scaler_path}")
         
@@ -273,4 +273,5 @@ def main():
     logging.info(f"\n6. OUTPUT: Engineered dataset saved to {args.output_path}")
 
 if __name__ == "__main__":
+    set_seed(42)
     main()

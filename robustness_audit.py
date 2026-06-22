@@ -121,4 +121,5 @@ def main():
     logging.info("\nRobustness Audit Complete.")
 
 if __name__ == "__main__":
+    set_seed(42)
     main()

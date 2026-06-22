@@ -58,7 +58,7 @@ class ContinuousDPOLoss(nn.Module):
 # ==========================================
 
 class FeedbackManager:
-    def __init__(self, model, checkpoint_dir="checkpoints", n_sigma_thresh=4.0):
+    def __init__(self, model, checkpoint_dir="models", n_sigma_thresh=4.0):
         self.model = model
         self.checkpoint_dir = checkpoint_dir
         self.n_sigma_thresh = n_sigma_thresh
@@ -187,4 +187,5 @@ def main():
     logging.info("\nPhase 6 Complete.")
 
 if __name__ == "__main__":
+    set_seed(42)
     main()

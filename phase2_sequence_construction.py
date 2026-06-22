@@ -307,4 +307,5 @@ def main():
     logging.info("\nPhase 2 Complete. Sequence Construction logic is empirically validated.")
 
 if __name__ == "__main__":
+    set_seed(42)
     main()

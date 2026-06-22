@@ -1,12 +1,11 @@
 pandas>=2.0.0
 numpy>=1.24.0
 scikit-learn>=1.2.0
-
 xgboost>=1.7.0
 lightgbm>=3.3.0
-
-pytorch-forecasting>=0.10.0
+torch>=2.0.0
 pmdarima>=2.0.0
-
-flask
-flask-cors
+joblib>=1.2.0
+matplotlib>=3.7.0
+flask>=2.3.0
+flask-cors>=4.0.0
